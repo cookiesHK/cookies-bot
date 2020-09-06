@@ -33,7 +33,8 @@ class Main(Cog_Extension):
     @commands.has_permissions(ban_members=True)
     async def ban(self, ctx, member: discord.Member, *, reason=None):
       await member.ban(reason=reason)
-      await ctx.send(f'> **BANNED** User {member}')
+      await ctx.send(f'> BANNED User {member}')
+
 
     @commands.command()
     @commands.has_permissions(administrator=True)
