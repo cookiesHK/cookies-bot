@@ -1,2 +1,2 @@
 # cookies-bot
-made bu IAmcookies #0001
+made by IAmcookies #0001
