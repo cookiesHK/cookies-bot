@@ -22,8 +22,11 @@ async def on_member_remove(member):
     channel = bot.get_channel(int(jdata['Leave_channel']))
     await channel.send(F'{member} leave!')
 
-@bot.command()
-async def ping(ctx):
-    await ctx.send(F'{round(bot.latency*1000)} (ms)')
-    
-bot.run(jdata['TOKEN'])
+for filename in os.listdir('./cmds'):
+    if filename.endswith('.py'):
+        bot.load_extension(f'cmds.{filename[:-3]}')
+
+
+
+if __name__ == "__main__":
+    bot.run(jdata['TOKEN'])
